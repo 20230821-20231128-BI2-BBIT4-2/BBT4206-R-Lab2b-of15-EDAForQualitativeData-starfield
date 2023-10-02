@@ -202,6 +202,9 @@ require("circlize")
 if (!is.element("memery", installed.packages()[, 1])) {
   install.packages("memery", dependencies = TRUE)
 }
+
+
+
 require("memery")
 
 ## magick - For image processing in R ----
