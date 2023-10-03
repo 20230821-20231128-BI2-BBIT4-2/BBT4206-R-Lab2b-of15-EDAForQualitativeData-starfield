@@ -27,8 +27,7 @@
 
 # "renv" It can be installed as follows:
 # if (!is.element("renv", installed.packages()[, 1])) {
-# install.packages("renv", dependencies = TRUE,
-repos = "https://cloud.r-project.org") # nolint
+#   install.packages("renv", dependencies = TRUE) # nolint
 # }
 # require("renv") # nolint
 
@@ -62,6 +61,7 @@ repos = "https://cloud.r-project.org") # nolint
 # Then execute the following command to see which packages are available in
 # each library:
 lapply(.libPaths(), list.files)
+
 
 # This can also be configured using the RStudio GUI when you click the project
 # file, e.g., "BBT4206-R.Rproj" in the case of this project. Then
@@ -97,10 +97,8 @@ lapply(.libPaths(), list.files)
 # If renv::restore() did not install the "languageserver" package (required to
 # use R for VS Code), then it can be installed manually as follows (restart R
 # after executing the command):
-
 if (!is.element("languageserver", installed.packages()[, 1])) {
-  install.packages("languageserver", dependencies = TRUE,
-  repos = "https://cloud.r-project.org")
+  install.packages("languageserver", dependencies = TRUE)
 }
 require("languageserver")
 
@@ -114,6 +112,8 @@ require("languageserver")
 # (ii) Sentence
 # (iii) Word
 
+library(dplyr)
+
 
 # STEP 1. Install and Load the Required Packages ----
 # The following packages can be installed and loaded before proceeding to the
@@ -121,71 +121,62 @@ require("languageserver")
 
 ## dplyr - For data manipulation ----
 if (!is.element("dplyr", installed.packages()[, 1])) {
-  install.packages("dplyr", dependencies = TRUE,
-  repos = "https://cloud.r-project.org")
+  install.packages("dplyr", dependencies = TRUE)
 }
 require("dplyr")
 
+
 ## ggplot2 - For data visualizations using the Grammar for Graphics package ----
 if (!is.element("ggplot2", installed.packages()[, 1])) {
-install.packages("ggplot2", dependencies = TRUE,
-repos = "https://cloud.r-project.org")
+  install.packages("ggplot2", dependencies = TRUE)
 }
 require("ggplot2")
 
 ## ggrepel - Additional options for the Grammar for Graphics package ----
 if (!is.element("ggrepel", installed.packages()[, 1])) {
-install.packages("ggrepel", dependencies = TRUE,
-repos = "https://cloud.r-project.org")
+  install.packages("ggrepel", dependencies = TRUE)
 }
 require("ggrepel")
 
 ## ggraph - Additional options for the Grammar for Graphics package ----
 if (!is.element("ggraph", installed.packages()[, 1])) {
-install.packages("ggraph", dependencies = TRUE,
-repos = "https://cloud.r-project.org")
+  install.packages("ggraph", dependencies = TRUE)
 }
 require("ggraph")
 
 ## tidytext - For text mining ----
 if (!is.element("tidytext", installed.packages()[, 1])) {
-install.packages("tidytext", dependencies = TRUE,
-repos = "https://cloud.r-project.org")
+  install.packages("tidytext", dependencies = TRUE)
 }
 require("tidytext")
 
 ## tidyr - To tidy messy data ----
 if (!is.element("tidyr", installed.packages()[, 1])) {
-install.packages("tidyr", dependencies = TRUE,
-repos = "https://cloud.r-project.org")
+  install.packages("tidyr", dependencies = TRUE)
 }
 require("tidyr")
 
 ## widyr - To widen, process, and re-tidy a dataset ----
 if (!is.element("widyr", installed.packages()[, 1])) {
-install.packages("widyr", dependencies = TRUE,
-repos = "https://cloud.r-project.org")
+  install.packages("widyr", dependencies = TRUE)
 }
 require("widyr")
 
 ## gridExtra - to arrange multiple grid-based plots on a page ----
 if (!is.element("gridExtra", installed.packages()[, 1])) {
-install.packages("gridExtra", dependencies = TRUE,
-repos = "https://cloud.r-project.org")
+  install.packages("gridExtra", dependencies = TRUE)
 }
 require("gridExtra")
 
 ## knitr - for dynamic report generation ----
 if (!is.element("knitr", installed.packages()[, 1])) {
-install.packages("knitr", dependencies = TRUE,
-repos = "https://cloud.r-project.org")
+  install.packages("knitr", dependencies = TRUE)
 }
 require("knitr")
 
 ## kableExtra - for nicely formatted output tables ----
 if (!is.element("kableExtra", installed.packages()[, 1])) {
-install.packages("kableExtra", dependencies = TRUE,
-repos = "https://cloud.r-project.org")
+  install.packages("kableExtra", dependencies = TRUE)
 }
 require("kableExtra")
 
@@ -193,16 +184,14 @@ require("kableExtra")
 # A formattable object is an object to which a formatting function and related
 # attributes are attached.
 if (!is.element("formattable", installed.packages()[, 1])) {
-install.packages("formattable", dependencies = TRUE,
-repos = "https://cloud.r-project.org")
+  install.packages("formattable", dependencies = TRUE)
 }
 require("formattable")
 
 ## circlize - To create a cord diagram or visualization ----
 # by Gu et al. (2014)
 if (!is.element("circlize", installed.packages()[, 1])) {
-install.packages("circlize", dependencies = TRUE,
-repos = "https://cloud.r-project.org")
+  install.packages("circlize", dependencies = TRUE)
 }
 require("circlize")
 
@@ -211,50 +200,46 @@ require("circlize")
 # superimposed inset plot and other atypical features, combining the visual
 # impact of an attention-grabbing meme with graphic results of data analysis.
 if (!is.element("memery", installed.packages()[, 1])) {
-install.packages("memery", dependencies = TRUE,
-repos = "https://cloud.r-project.org")
+  install.packages("memery", dependencies = TRUE)
 }
+
+
+
 require("memery")
 
 ## magick - For image processing in R ----
 if (!is.element("magick", installed.packages()[, 1])) {
-install.packages("magick", dependencies = TRUE,
-repos = "https://cloud.r-project.org")
+  install.packages("magick", dependencies = TRUE)
 }
 require("magick")
 
 ## yarrr - To create a pirate plot ----
 if (!is.element("yarrr", installed.packages()[, 1])) {
-install.packages("yarrr", dependencies = TRUE,
-repos = "https://cloud.r-project.org")
+  install.packages("yarrr", dependencies = TRUE)
 }
 require("yarrr")
 
 ## radarchart - To create interactive radar charts using ChartJS ----
 if (!is.element("radarchart", installed.packages()[, 1])) {
-install.packages("radarchart", dependencies = TRUE,
-repos = "https://cloud.r-project.org")
+  install.packages("radarchart", dependencies = TRUE)
 }
 require("radarchart")
 
 ## igraph - To create ngram network diagrams ----
 if (!is.element("igraph", installed.packages()[, 1])) {
-install.packages("igraph", dependencies = TRUE,
-repos = "https://cloud.r-project.org")
+  install.packages("igraph", dependencies = TRUE)
 }
 require("igraph")
 
 ## wordcloud2 - For creating wordcloud by using 'wordcloud2.JS ----
 if (!is.element("wordcloud2", installed.packages()[, 1])) {
-install.packages("wordcloud2", dependencies = TRUE,
-repos = "https://cloud.r-project.org")
+  install.packages("wordcloud2", dependencies = TRUE)
 }
 require("wordcloud2")
 
 ## readr - Load datasets from CSV files ----
 if (!is.element("readr", installed.packages()[, 1])) {
-install.packages("readr", dependencies = TRUE,
-repos = "https://cloud.r-project.org")
+  install.packages("readr", dependencies = TRUE)
 }
 require("readr")
 
@@ -268,10 +253,9 @@ blue_grey_colours_11 <- c("#27408E", "#304FAF", "#536CB5", "#6981c7", "#8da0db",
 blue_grey_colours_6 <- c("#27408E", "#304FAF", "#536CB5",
                          "#B9BCC2", "#A7AAAF", "#888A8E")
 
+
 blue_grey_colours_4 <- c("#27408E", "#536CB5",
                          "#B9BCC2", "#888A8E")
-
-blue_grey_colours_3 <- c("#6981c7", "#304FAF", "#888A8E")
 
 blue_grey_colours_2 <- c("#27408E",
                          "#888A8E")
@@ -282,20 +266,20 @@ blue_grey_colours_1 <- c("#6981c7")
 blue_grey_theme <- function() {
   theme(
     axis.ticks = element_line(
-                              linewidth = 1, linetype = "dashed",
-                              lineend = NULL, color = "#dfdede",
-                              arrow = NULL, inherit.blank = FALSE),
+      linewidth = 1, linetype = "dashed",
+      lineend = NULL, color = "#dfdede",
+      arrow = NULL, inherit.blank = FALSE),
     axis.text = element_text(
-                             face = "bold", color = "#3f3f41",
-                             size = 12, hjust = 0.5),
+      face = "bold", color = "#3f3f41",
+      size = 12, hjust = 0.5),
     axis.title = element_text(face = "bold", color = "#3f3f41",
                               size = 14, hjust = 0.5),
     plot.title = element_text(face = "bold", color = "#3f3f41",
                               size = 16, hjust = 0.5),
     panel.grid = element_line(
-                              linewidth = 0.1, linetype = "dashed",
-                              lineend = NULL, color = "#dfdede",
-                              arrow = NULL, inherit.blank = FALSE),
+      linewidth = 0.1, linetype = "dashed",
+      lineend = NULL, color = "#dfdede",
+      arrow = NULL, inherit.blank = FALSE),
     panel.background = element_rect(fill = "#f3eeee"),
     legend.title = element_text(face = "plain", color = "#3f3f41",
                                 size = 12, hjust = 0),
@@ -311,140 +295,82 @@ kable_theme <- function(dat, caption) {
 }
 
 # STEP 3. Load the Dataset ----
+library(dplyr)
 student_performance_dataset <-
-  readr::read_csv(
-                  "data/20230412-20230719-BI1-BBIT4-1-StudentPerformanceDataset.CSV", # nolint
-                  col_types =
-                  readr::cols(
-                              class_group =
-                              readr::col_factor(levels = c("A", "B", "C")),
-                              gender = readr::col_factor(levels = c("1", "0")),
-                              YOB = readr::col_date(format = "%Y"),
-                              regret_choosing_bi =
-                              readr::col_factor(levels = c("1", "0")),
-                              drop_bi_now =
-                              readr::col_factor(levels = c("1", "0")),
-                              motivator =
-                              readr::col_factor(levels = c("1", "0")),
-                              read_content_before_lecture =
-                              readr::col_factor(levels =
-                                                c("1", "2", "3", "4", "5")),
-                              anticipate_test_questions =
-                              readr::col_factor(levels =
-                                                c("1", "2", "3", "4", "5")),
-                              answer_rhetorical_questions =
-                              readr::col_factor(levels =
-                                                c("1", "2", "3", "4", "5")),
-                              find_terms_I_do_not_know =
-                              readr::col_factor(levels =
-                                                c("1", "2", "3", "4", "5")),
-                              copy_new_terms_in_reading_notebook =
-                              readr::col_factor(levels =
-                                                c("1", "2", "3", "4", "5")),
-                              take_quizzes_and_use_results =
-                              readr::col_factor(levels =
-                                                c("1", "2", "3", "4", "5")),
-                              reorganise_course_outline =
-                              readr::col_factor(levels =
-                                                c("1", "2", "3", "4", "5")),
-                              write_down_important_points =
-                              readr::col_factor(levels =
-                                                c("1", "2", "3", "4", "5")),
-                              space_out_revision =
-                              readr::col_factor(levels =
-                                                c("1", "2", "3", "4", "5")),
-                              studying_in_study_group =
-                              readr::col_factor(levels =
-                                                c("1", "2", "3", "4", "5")),
-                              schedule_appointments =
-                              readr::col_factor(levels =
-                                                c("1", "2", "3", "4", "5")),
-                              goal_oriented =
-                              readr::col_factor(levels =
-                                                c("1", "0")),
-                              spaced_repetition =
-                              readr::col_factor(levels =
-                                                c("1", "2", "3", "4")),
-                              testing_and_active_recall =
-                              readr::col_factor(levels =
-                                                c("1", "2", "3", "4")),
-                              interleaving =
-                              readr::col_factor(levels =
-                                                c("1", "2", "3", "4")),
-                              categorizing =
-                              readr::col_factor(levels =
-                                                c("1", "2", "3", "4")),
-                              retrospective_timetable =
-                              readr::col_factor(levels =
-                                                c("1", "2", "3", "4")),
-                              cornell_notes =
-                              readr::col_factor(levels =
-                                                c("1", "2", "3", "4")),
-                              sq3r = readr::col_factor(levels =
-                                                       c("1", "2", "3", "4")),
-                              commute = readr::col_factor(levels =
-                                                          c("1", "2",
-                                                            "3", "4")),
-                              study_time = readr::col_factor(levels =
-                                                             c("1", "2",
-                                                               "3", "4")),
-                              repeats_since_Y1 = readr::col_integer(),
-                              paid_tuition = readr::col_factor(levels =
-                                                               c("0", "1")),
-                              free_tuition = readr::col_factor(levels =
-                                                               c("0", "1")),
-                              extra_curricular = readr::col_factor(levels =
-                                                                   c("0", "1")),
-                              sports_extra_curricular =
-                              readr::col_factor(levels = c("0", "1")),
-                              exercise_per_week = readr::col_factor(levels =
-                                                                    c("0", "1",
-                                                                      "2",
-                                                                      "3")),
-                              meditate = readr::col_factor(levels =
-                                                           c("0", "1",
-                                                             "2", "3")),
-                              pray = readr::col_factor(levels =
-                                                       c("0", "1",
-                                                         "2", "3")),
-                              internet = readr::col_factor(levels =
-                                                           c("0", "1")),
-                              laptop = readr::col_factor(levels = c("0", "1")),
-                              family_relationships =
-                              readr::col_factor(levels =
-                                                c("1", "2", "3", "4", "5")),
-                              friendships = readr::col_factor(levels =
-                                                              c("1", "2", "3",
-                                                                "4", "5")),
-                              romantic_relationships =
-                              readr::col_factor(levels =
-                                                c("0", "1", "2", "3", "4")),
-                              spiritual_wellnes =
-                              readr::col_factor(levels = c("1", "2", "3",
-                                                           "4", "5")),
-                              financial_wellness =
-                              readr::col_factor(levels = c("1", "2", "3",
-                                                           "4", "5")),
-                              health = readr::col_factor(levels = c("1", "2",
-                                                                    "3", "4",
-                                                                    "5")),
-                              day_out = readr::col_factor(levels = c("0", "1",
-                                                                     "2", "3")),
-                              night_out = readr::col_factor(levels = c("0",
-                                                                       "1", "2",
-                                                                       "3")),
-                              alcohol_or_narcotics =
-                              readr::col_factor(levels = c("0", "1", "2", "3")),
-                              mentor = readr::col_factor(levels = c("0", "1")),
-                              mentor_meetings = readr::col_factor(levels =
-                                                                  c("0", "1",
-                                                                    "2", "3")),
-                              `Attendance Waiver Granted: 1 = Yes, 0 = No` =
-                              readr::col_factor(levels = c("0", "1")),
-                              GRADE = readr::col_factor(levels =
-                                                        c("A", "B", "C", "D",
-                                                          "E"))),
-                  locale = readr::locale())
+  read_csv("data/20230412-20230719-BI1-BBIT4-1-StudentPerformanceDataset.CSV",
+           col_types =
+             cols(
+               class_group = col_factor(levels = c("A", "B", "C")),
+               gender = col_factor(levels = c("1", "0")),
+               YOB = col_date(format = "%Y"),
+               regret_choosing_bi = col_factor(levels = c("1", "0")),
+               drop_bi_now = col_factor(levels = c("1", "0")),
+               motivator = col_factor(levels = c("1", "0")),
+               read_content_before_lecture =
+                 col_factor(levels = c("1", "2", "3", "4", "5")),
+               anticipate_test_questions =
+                 col_factor(levels = c("1", "2", "3", "4", "5")),
+               answer_rhetorical_questions =
+                 col_factor(levels = c("1", "2", "3", "4", "5")),
+               find_terms_I_do_not_know =
+                 col_factor(levels = c("1", "2", "3", "4", "5")),
+               copy_new_terms_in_reading_notebook =
+                 col_factor(levels = c("1", "2", "3", "4", "5")),
+               take_quizzes_and_use_results =
+                 col_factor(levels = c("1", "2", "3", "4", "5")),
+               reorganise_course_outline =
+                 col_factor(levels = c("1", "2", "3", "4", "5")),
+               write_down_important_points =
+                 col_factor(levels = c("1", "2", "3", "4", "5")),
+               space_out_revision =
+                 col_factor(levels = c("1", "2", "3", "4", "5")),
+               studying_in_study_group =
+                 col_factor(levels = c("1", "2", "3", "4", "5")),
+               schedule_appointments =
+                 col_factor(levels = c("1", "2", "3", "4", "5")),
+               goal_oriented = col_factor(levels = c("1", "0")),
+               spaced_repetition =
+                 col_factor(levels = c("1", "2", "3", "4")),
+               testing_and_active_recall =
+                 col_factor(levels = c("1", "2", "3", "4")),
+               interleaving = col_factor(levels = c("1", "2", "3", "4")),
+               categorizing = col_factor(levels = c("1", "2", "3", "4")),
+               retrospective_timetable =
+                 col_factor(levels = c("1", "2", "3", "4")),
+               cornell_notes = col_factor(levels = c("1", "2", "3", "4")),
+               sq3r = col_factor(levels = c("1", "2", "3", "4")),
+               commute = col_factor(levels = c("1", "2", "3", "4")),
+               study_time = col_factor(levels = c("1", "2", "3", "4")),
+               repeats_since_Y1 = col_integer(),
+               paid_tuition = col_factor(levels = c("0", "1")),
+               free_tuition = col_factor(levels = c("0", "1")),
+               extra_curricular = col_factor(levels = c("0", "1")),
+               sports_extra_curricular = col_factor(levels = c("0", "1")),
+               exercise_per_week = col_factor(levels = c("0", "1", "2", "3")),
+               meditate = col_factor(levels = c("0", "1", "2", "3")),
+               pray = col_factor(levels = c("0", "1", "2", "3")),
+               internet = col_factor(levels = c("0", "1")),
+               laptop = col_factor(levels = c("0", "1")),
+               family_relationships =
+                 col_factor(levels = c("1", "2", "3", "4", "5")),
+               friendships = col_factor(levels = c("1", "2", "3", "4", "5")),
+               romantic_relationships =
+                 col_factor(levels = c("0", "1", "2", "3", "4")),
+               spiritual_wellnes =
+                 col_factor(levels = c("1", "2", "3", "4", "5")),
+               financial_wellness =
+                 col_factor(levels = c("1", "2", "3", "4", "5")),
+               health = col_factor(levels = c("1", "2", "3", "4", "5")),
+               day_out = col_factor(levels = c("0", "1", "2", "3")),
+               night_out = col_factor(levels = c("0", "1", "2", "3")),
+               alcohol_or_narcotics =
+                 col_factor(levels = c("0", "1", "2", "3")),
+               mentor = col_factor(levels = c("0", "1")),
+               mentor_meetings = col_factor(levels = c("0", "1", "2", "3")),
+               `Attendance Waiver Granted: 1 = Yes, 0 = No` =
+                 col_factor(levels = c("0", "1")),
+               GRADE = col_factor(levels = c("A", "B", "C", "D", "E"))),
+           locale = locale())
 
 View(student_performance_dataset)
 
@@ -522,7 +448,7 @@ evaluation_per_group_per_gender %>%
          `Average Course Evaluation Rating`) %>%
   mutate(`Average Course Evaluation Rating` =
            color_tile("#B9BCC2", "#536CB5")
-           (`Average Course Evaluation Rating`)) %>%
+         (`Average Course Evaluation Rating`)) %>%
   kable("html", escape = FALSE, align = "c",
         caption = "Course Evaluation Rating per Group and per Gender") %>%
   kable_styling(bootstrap_options =
@@ -646,13 +572,46 @@ write.csv(evaluation_likes_and_wishes,
 # techniques like *lemmatization*, which considers the context and grammatical
 # structure of words, are often preferred for certain Natural Language
 # Processing (NLP) tasks.
+library(tidyverse)
+library(tidytext)
+library(tm)
 
-# Summary:
-#  (i) Stemming: generally refers to removing suffixes from words to get the
-#      common origin
-#  (ii) Lemmatization: reducing inflected (or sometimes derived) words to their
-#       word stem, base or root form
-#  (iii) Word replacement: replace words with more frequently used synonyms
+student_performance_dataset <- read_csv("data/20230412-20230719-BI1-BBIT4-1-StudentPerformanceDataset.CSV",
+                                        col_types = cols(
+                                          class_group = col_factor(levels = c("A", "B", "C")),
+                                          gender = col_factor(levels = c("1", "0")),
+                                          YOB = col_date(format = "%Y"),
+                                          regret_choosing_bi = col_factor(levels = c("1", "0")),  # Keep this as a factor
+                                          drop_bi_now = col_factor(levels = c("1", "0")),  # Keep this as a factor
+                                          # ... other columns ...
+                                          GRADE = col_factor(levels = c("A", "B", "C", "D", "E"))
+                                        ),
+                                        locale = locale())
+
+# Specify the text columns you want to tokenize
+text_columns <- c("regret_choosing_bi", "drop_bi_now")  # Replace with actual column names
+
+# Identify text columns and tokenize them
+tokenized_data <- student_performance_dataset %>%
+  select(all_of(text_columns)) %>%
+  mutate(across(where(is.character), ~unnest_tokens(.x, .x, token = "words")))  # Tokenization method may vary
+
+# Create a corpus from the tokenized data
+corpus <- Corpus(VectorSource(unlist(tokenized_data)))
+
+# Apply stemming to the corpus
+corpus_stemmed <- tm_map(corpus, stemDocument)
+
+# Convert the stemmed corpus back to a data frame
+tokenized_data_stemmed <- data.frame(
+  text = sapply(corpus_stemmed, as.character),
+  stringsAsFactors = FALSE
+)
+
+
+# View the tokenized and stemmed data
+View(tokenized_data_stemmed)
+
 
 ## Tokenization ----
 # The goal of text mining is to discover relevant information that is possibly
@@ -678,6 +637,33 @@ write.csv(evaluation_likes_and_wishes,
 # learning tasks. It forms the basis for many text processing techniques and is
 # essential for understanding and working with textual data in computational
 # applications.
+# Load the dplyr package
+# Load the necessary libraries
+library(tidyverse)
+library(tidytext)
+
+# Read the student performance dataset
+student_performance_dataset <- read_csv("data/20230412-20230719-BI1-BBIT4-1-StudentPerformanceDataset.CSV",
+                                        col_types = cols(
+                                          class_group = col_factor(levels = c("A", "B", "C")),
+                                          gender = col_factor(levels = c("1", "0")),
+                                          YOB = col_date(format = "%Y"),
+                                          # ... other columns ...
+                                          GRADE = col_factor(levels = c("A", "B", "C", "D", "E"))
+                                        ),
+                                        locale = locale())
+
+# Specify the text columns you want to tokenize
+text_columns <- c("regret_choosing_bi", "drop_bi_now")  # Replace with actual column names
+
+# Tokenize the text columns
+tokenized_data <- student_performance_dataset %>%
+  select(all_of(text_columns)) %>%
+  mutate(across(where(is.character), ~unnest_tokens(.x, text, token = "words")))  # Tokenization method may vary
+
+# View the tokenized data
+View(tokenized_data)
+
 
 ## Stopword Removal, Short Word Removal, and Censorship ----
 
@@ -696,7 +682,7 @@ head(sample(stop_words$word, 20), 20)
 undesirable_words <- c("wow", "lol", "none", "na")
 
 evaluation_likes_filtered <- evaluation_likes_and_wishes %>% # nolint
-  # We start by tokenization (un-nesting words). This is from the variable
+  # We start by tokenization (unnesting words). This is from the variable
   # "Like" into the variable "word".
   unnest_tokens(word, Likes) %>%
   # Then we remove stopwords using an anti-join (remember this from the
@@ -769,6 +755,8 @@ word_count_per_group %>%
                   c("striped", "condensed", "bordered"),
                 full_width = FALSE)
 
+
+
 ## Evaluation Wishes ----
 ### Word count per gender ----
 word_count_per_gender_wishes <- evaluation_wishes_filtered %>%
@@ -823,6 +811,9 @@ evaluation_likes_filtered %>%
           Students") +
   coord_flip()
 
+
+
+
 ### Top 10 words for male students ----
 evaluation_likes_filtered %>%
   select(`Class Group`, `Student's Gender`,
@@ -839,6 +830,7 @@ evaluation_likes_filtered %>%
   ggtitle("Most Frequently Used Words in Course Evaluation Likes for Male
           Students") +
   coord_flip()
+
 
 ### Top 10 words per gender ----
 popular_words <- evaluation_likes_filtered %>%
@@ -858,8 +850,8 @@ popular_words %>%
   ggtitle("Most Frequently Used Words in Course Evaluation Likes per Gender") +
   facet_wrap(~`Student's Gender`, scales = "free") +
   scale_x_continuous(
-                     breaks = popular_words$row,
-                     labels = popular_words$`Likes (tokenized)`) +
+    breaks = popular_words$row,
+    labels = popular_words$`Likes (tokenized)`) +
   coord_flip()
 
 ### Top words for Group A students ----
@@ -896,6 +888,7 @@ evaluation_likes_filtered %>%
           Students") +
   coord_flip()
 
+
 ### Top words for Group C students ----
 evaluation_likes_filtered %>%
   select(`Class Group`, `Student's Gender`,
@@ -931,8 +924,8 @@ popular_words %>%
           Class Group") +
   facet_wrap(~`Class Group`, scales = "free") +
   scale_x_continuous(
-                     breaks = popular_words$row,
-                     labels = popular_words$`Likes (tokenized)`) +
+    breaks = popular_words$row,
+    labels = popular_words$`Likes (tokenized)`) +
   coord_flip()
 
 ## Evaluation Wishes ----
@@ -987,9 +980,10 @@ popular_words %>%
   ggtitle("Most Frequently Used Words in Course Evaluation Wishes per Gender") +
   facet_wrap(~`Student's Gender`, scales = "free") +
   scale_x_continuous(
-                     breaks = popular_words$row,
-                     labels = popular_words$`Wishes (tokenized)`) +
+    breaks = popular_words$row,
+    labels = popular_words$`Wishes (tokenized)`) +
   coord_flip()
+
 
 ### Top words for Group A students ----
 evaluation_wishes_filtered %>%
@@ -1061,8 +1055,8 @@ popular_words %>%
           Class Group") +
   facet_wrap(~`Class Group`, scales = "free") +
   scale_x_continuous(
-                     breaks = popular_words$row,
-                     labels = popular_words$`Wishes (tokenized)`) +
+    breaks = popular_words$row,
+    labels = popular_words$`Wishes (tokenized)`) +
   coord_flip()
 
 # STEP 8. Word Cloud ----
@@ -1243,8 +1237,8 @@ top_popular_tfidf_words %>%
       Class Group") +
   facet_wrap(~`Student's Gender`, scales = "free") +
   scale_x_continuous(
-                     breaks = top_popular_tfidf_words$row,
-                     labels = top_popular_tfidf_words$`Likes (tokenized)`) +
+    breaks = top_popular_tfidf_words$row,
+    labels = top_popular_tfidf_words$`Likes (tokenized)`) +
   coord_flip()
 
 ### TF-IDF Score per Group ----
@@ -1283,8 +1277,8 @@ top_popular_tfidf_words %>%
       Class Group") +
   facet_wrap(~`Class Group`, scales = "free") +
   scale_x_continuous(
-                     breaks = top_popular_tfidf_words$row,
-                     labels = top_popular_tfidf_words$`Likes (tokenized)`) +
+    breaks = top_popular_tfidf_words$row,
+    labels = top_popular_tfidf_words$`Likes (tokenized)`) +
   coord_flip()
 
 ## Evaluation Wishes ----
@@ -1324,8 +1318,8 @@ top_popular_tfidf_words %>%
       Class Group") +
   facet_wrap(~`Student's Gender`, scales = "free") +
   scale_x_continuous(
-                     breaks = top_popular_tfidf_words$row,
-                     labels = top_popular_tfidf_words$`Wishes (tokenized)`) +
+    breaks = top_popular_tfidf_words$row,
+    labels = top_popular_tfidf_words$`Wishes (tokenized)`) +
   coord_flip()
 
 ### TF-IDF Score per Group ----
@@ -1343,6 +1337,7 @@ popular_tfidf_words_likes <- evaluation_wishes_filtered %>% # nolint
 
 head(popular_tfidf_words_likes)
 
+
 top_popular_tfidf_words <- popular_tfidf_words_likes %>%
   arrange(desc(tf_idf)) %>%
   mutate(`Wishes (tokenized)` =
@@ -1354,6 +1349,9 @@ top_popular_tfidf_words <- popular_tfidf_words_likes %>%
   arrange(`Class Group`, tf_idf) %>%
   mutate(row = row_number())
 
+
+
+
 top_popular_tfidf_words %>%
   ggplot(aes(x = row, tf_idf, fill = `Class Group`)) +
   geom_col(fill = blue_grey_colours_1) +
@@ -1364,8 +1362,8 @@ top_popular_tfidf_words %>%
       Class Group") +
   facet_wrap(~`Class Group`, scales = "free") +
   scale_x_continuous(
-                     breaks = top_popular_tfidf_words$row,
-                     labels = top_popular_tfidf_words$`Wishes (tokenized)`) +
+    breaks = top_popular_tfidf_words$row,
+    labels = top_popular_tfidf_words$`Wishes (tokenized)`) +
   coord_flip()
 
 # [OPTIONAL] **Deinitialization: Create a snapshot of the R environment ----
@@ -1373,6 +1371,7 @@ top_popular_tfidf_words %>%
 # installed and their sources in the lockfile so that other team-members can
 # use renv::restore() to re-install the same package version in their local
 # machine during their initialization step.
+
 # renv::snapshot() # nolint
 
 # References ----
@@ -1381,6 +1380,7 @@ top_popular_tfidf_words %>%
 ## Auguie, B., & Antonov, A. (2017). gridExtra: Miscellaneous Functions for ‘Grid’ Graphics (2.3) [Computer software]. https://cran.r-project.org/package=gridExtra # nolint ----
 
 ## Bevans, R. (2023b). Sample Crop Data Dataset for ANOVA (Version 1) [Dataset]. Scribbr. https://www.scribbr.com/wp-content/uploads//2020/03/crop.data_.anova_.zip # nolint ----
+
 
 ## Csárdi, G., Nepusz, T., Traag, V., Horvát, S., Zanini, F., Noom, D., Müller, K., Salmon, M., & details, C. Z. I. igraph author. (2023). igraph: Network Analysis and Visualization (1.5.1) [Computer software]. https://cran.r-project.org/package=igraph # nolint ----
 
@@ -1424,7 +1424,7 @@ top_popular_tfidf_words %>%
 #       Git and GitHub.
 
 ## Part A ----
-# Create a markdown file called "Lab2b-Submission-EDA-Qual-Markdown.Rmd"
+# Create a markdown file called "Lab-Submission-Markdown.Rmd"
 # and place it inside the folder called "markdown". Use R Studio to ensure the
 # .Rmd file is based on the "GitHub Document (Markdown)" template when it is
 # being created.
@@ -1446,11 +1446,10 @@ top_popular_tfidf_words %>%
 
 # By default, Rmd files are open as Markdown documents. To enable R Markdown
 # features, you need to associate *.Rmd files with rmd language.
-# Add an entry Item "*.Rmd" and Value "rmd" in the VS Code settings,
-# "File Association" option.
+# Add an entry Item "*.Rmd" and Value "rmd" in the VS Code settings editor.
 
 # Documentation of knitR: https://www.rdocumentation.org/packages/knitr/
 
-# Upload *the link* to "Lab2b-Submission-EDA-Qual-Markdown.md" (not .Rmd)
-# markdown file hosted on Github's main branch (do not upload the .Rmd or .md
-# markdown files) through the submission link provided on eLearning.
+# Upload *the link* to "Lab-Submission-Markdown.md" (not .Rmd)
+# markdown file hosted on Github (do not upload the .Rmd or .md markdown files)
+# through the submission link provided on eLearning.
