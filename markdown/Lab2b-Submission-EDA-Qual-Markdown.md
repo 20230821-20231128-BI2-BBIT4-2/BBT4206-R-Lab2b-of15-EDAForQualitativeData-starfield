@@ -1521,7 +1521,16 @@ View(tokenized_data)
 Here a word count is done
 
 ``` r
-## Evaluation Likes ---- Word count per gender ----
+head(sample(stop_words$word, 20), 20)
+```
+
+    ##  [1] "him"        "sensible"   "last"       "higher"     "over"      
+    ##  [6] "but"        "she'd"      "regardless" "face"       "further"   
+    ## [11] "re"         "seeming"    "you'll"     "indicated"  "let's"     
+    ## [16] "downs"      "keep"       "older"      "herein"     "thanks"
+
+``` r
+undesirable_words <- c("wow", "lol", "none", "na")
 ```
 
 Here analysis of the top words across the groups are analysed

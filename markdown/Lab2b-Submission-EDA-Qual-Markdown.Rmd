@@ -375,24 +375,9 @@ View(tokenized_data)
 
 Here a word count is done
 ```{r Your thirteenth code chunk}
-## Evaluation Likes ----
-### Word count per gender ----
+head(sample(stop_words$word, 20), 20)
+undesirable_words <- c("wow", "lol", "none", "na")
+
 
 ```
-
-Here analysis of the top words across the groups are analysed
-```{r Your fourteenth code chunk}
-
-```
-
-Here a word cloud visual aid is used to show the analysis 
-```{r Your fifteenth code chunk}
-
-```
-
-Here the frequency of certain terms 'top terms for instance' is analysed
-```{r Your sixteenth code chunk}
-
-```
-
 
